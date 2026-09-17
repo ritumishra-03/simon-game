@@ -32,4 +32,4 @@ The game becomes more challenging as the level increases.
 
 ## Screenshot
 
-![Simon's Game](screenshot(2)(1).png )
+!(screenshot(2)(1).png )
