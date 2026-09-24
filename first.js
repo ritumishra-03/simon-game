@@ -8,7 +8,6 @@ let level = 0;
 
 let h3 = document.querySelector("h3");
 
-// 1. गेम शुरू करने के लिए (कीबोर्ड की कोई भी की दबाएं)
 document.addEventListener("keypress", function() {
     if (started == false) {
         console.log("game is started");
@@ -46,11 +45,11 @@ function levelup() {
     gameflash(randbtn);
 }
   
-// 2. आंसर चेक करने का सही लॉजिक (ब्रैकेट फिक्स किया गया)
+
 function checkans(idx) {
     if (userseq[idx] === gameseq[idx]) {
         if (userseq.length == gameseq.length) {
-            setTimeout(levelup, 1000); // सही setTimeout तरीका
+            setTimeout(levelup, 1000); 
         }
     } else {
         h3.innerHTML = `game is over! your score was <b> ${level} </b> <br> press any key to restart`;
@@ -60,9 +59,9 @@ function checkans(idx) {
         }, 150);
         reset();
     }
-} // ⬅️ यहाँ आपका ब्रैकेट बंद नहीं था!
+} 
 
-// 3. माउस से बटन क्लिक करने पर
+
 function btnpress() {
     let btn = this;
     userflash(btn);
@@ -72,13 +71,13 @@ function btnpress() {
     checkans(userseq.length - 1);
 }
  
-// querySelectorAll को फिक्स किया गया ताकि सारे बटन्स काम करें
+
 let allbtns = document.querySelectorAll(".btn");
 for (let btn of allbtns) {
     btn.addEventListener("click", btnpress);
 }
 
-// 4. बिना माउस के कीबोर्ड से खेलने का लॉजिक (r, b, g, y)
+
 document.addEventListener("keydown", function(event) {
     if (started == true) {
         let key = event.key.toLowerCase();
@@ -100,7 +99,7 @@ document.addEventListener("keydown", function(event) {
 });
      
 function reset() {
-    started = false; // स्पेलिंग सही की (started)
+    started = false; 
     gameseq = [];
     userseq = [];
     level = 0;
